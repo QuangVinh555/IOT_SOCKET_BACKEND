@@ -47,6 +47,7 @@ namespace Masterdata.Application.Features.V1.Queries.Question
             {
                 var QuestionDataRes = new QuestionDataResponse
                 {
+                    TopicId = TopicId,
                     QuestionId = question.QuestionId,
                     QuestionName = question.QuestionName,
                     QuestionTime = question.QuestionTime,

@@ -15,6 +15,7 @@ namespace Masterdata.Application.Features.V1.DTOs.Question
 
     public class QuestionDataResponse
     {
+        public Guid? TopicId { get; set; }
         public Guid? QuestionId { get; set; }
         public int? QuestionTime { get; set; }
         public string QuestionName { get; set; }

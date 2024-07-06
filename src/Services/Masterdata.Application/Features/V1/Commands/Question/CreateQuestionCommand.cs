@@ -24,7 +24,7 @@ namespace Masterdata.Application.Features.V1.Commands.Question
         public int? QuestionTime { get; set; }
         public string ImageUrl { get; set; }
         public string VideoUrl { get; set; }
-        public List<CreateAnswerCommand> ListAnswers { get; set; } = new();
+        public List<CreateAnswerCommand> ListAnswerDatas { get; set; } = new();
 
     }
     public class CreateAnswerCommand
@@ -92,9 +92,9 @@ namespace Masterdata.Application.Features.V1.Commands.Question
                  await _context.QuestionModels.AddAsync(questionEntity);
 
                 // Add đáp án
-                if (!question.ListAnswers.Any()) continue;
+                if (!question.ListAnswerDatas.Any()) continue;
 
-                foreach (var item in question.ListAnswers)
+                foreach (var item in question.ListAnswerDatas)
                 {
                     var answerEntity = new AnswerModel
                     {

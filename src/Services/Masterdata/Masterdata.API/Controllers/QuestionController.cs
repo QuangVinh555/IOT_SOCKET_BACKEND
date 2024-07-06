@@ -36,6 +36,17 @@ namespace Masterdata.API.Controllers
             });
         }
 
+        [HttpPost("update")]
+        public async Task<IActionResult> UpdateQuestion(UpdateQuestionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(new ApiSuccessResponse
+            {
+                Data = result,
+                Message = result == true ?"Cập nhật câu hỏi thành công":"Cập nhật câu hỏi thát bại"
+            });
+        }
+
         [HttpGet("list-question-by-topicId")]
         public async Task<IActionResult> GetListQuestionByTopicId([FromQuery] Guid TopicId)
         {
